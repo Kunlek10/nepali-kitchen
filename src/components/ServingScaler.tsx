@@ -11,13 +11,9 @@ export default function ServingScaler({ ingredients, originalServings, servings 
   const multiplier = servings / originalServings;
 
   return (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold text-deep-green mb-4">Ingredients</h2>
-      <IngredientList
-        ingredients={ingredients}
-        servingMultiplier={multiplier}
-        originalServings={originalServings}
-      />
-    </div>
+    <IngredientList
+      ingredients={ingredients}
+      servingMultiplier={multiplier}
+    />
   );
 }

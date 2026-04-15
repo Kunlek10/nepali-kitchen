@@ -23,7 +23,7 @@ export default function RecipeDetailPage({
   }[recipe.spiceLevel];
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-5xl mx-auto">
       <Link
         href="/recipes"
         className="text-sm text-saffron hover:text-turmeric font-medium"
@@ -56,11 +56,14 @@ export default function RecipeDetailPage({
           </span>
         </div>
 
-        <RecipeClientSection recipe={recipe} />
-
-        <div className="mt-8">
-          <h2 className="text-xl font-bold text-deep-green mb-4">Instructions</h2>
-          <CookingSteps steps={recipe.steps} />
+        <div className="mt-8 grid md:grid-cols-[280px_1fr] gap-8 items-start">
+          <div className="md:sticky md:top-20">
+            <RecipeClientSection recipe={recipe} />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-deep-green mb-4">Instructions</h2>
+            <CookingSteps steps={recipe.steps} />
+          </div>
         </div>
       </div>
     </div>
