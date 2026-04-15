@@ -90,7 +90,12 @@ export default function ShoppingListPage() {
               key={r.slug}
               className="inline-flex items-center gap-1 bg-cream text-deep-green px-3 py-1 rounded-full text-sm"
             >
-              {r.imageEmoji} {r.name}
+              <Link
+                href={`/recipe/${r.slug}`}
+                className="hover:underline"
+              >
+                {r.imageEmoji} {r.name}
+              </Link>
               <button
                 onClick={() => removeRecipe(r.slug)}
                 className="ml-1 text-gray-400 hover:text-red-500"
